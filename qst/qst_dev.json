@@ -1,0 +1,15 @@
+[
+    {
+      "id": 0,
+      "question": "Lequel des langages suivants est le plus utilisé en 2025 ?",
+      "options": {"A": "Python", "B": "Java", "C": "C/C++", "D": "Rust"},
+      "answer": "A"
+    },
+    {
+      "id": 1,
+      "question": "Quelle est la capitale de la France ?",
+      "options": {"A": "Londres", "B": "Paris", "C": "Berlin", "D": "Rome"},
+      "answer": "B"
+    }
+  ]
+  
