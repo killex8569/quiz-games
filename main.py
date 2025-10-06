@@ -14,6 +14,33 @@ def main_menu():
     if user_choix_section == 2:
         menu_dev()
 
+
+def menu_astro():
+    print("Bienvenue dans le menu d'astronomie")
+    global player_chance, player_score
+    with open("qst/qst_astro.json", "r", encoding="utf-8") as f:
+        questions = json.load(f)
+    q = choice(questions)
+    print(q["question"])
+    for letter, options in q["options"].items():
+        print(f"{letter}: {options}")
+    user_answer = str(input("Votre réponse : "))
+    if player_chance == 0:
+        print(" vous avez perdu !")
+    else:
+        if user_answer == q["answer"]:
+            print("Oui, bien jouer !")
+            player_score += 1
+            print("Vie restante : ", player_chance)
+            print("Votre score : ", player_score)
+            menu_astro()
+        else:
+            print("Faux !")
+            player_chance -= 1
+            print("Vie restante : ", player_chance)
+            print("Votre score : ", player_score)
+            menu_astro()
+
 def menu_dev():
     global player_score, player_chance
     with open("qst/qst_dev.json", "r", encoding="utf-8") as f:
